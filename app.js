@@ -1,11 +1,15 @@
-const express = require("express");
-const morgan = require("morgan");
+const express = require('express');
+const morgan = require('morgan');
 const app = express();
-const { db, Page, User } = require("./models");
+const wikiRouter = require('./routes/wiki');
+const userRouter = require('./routes/users');
+const { db, Page, User } = require('./models');
 
 db.authenticate().then(() => {
-  console.log("connected to the database");
+  console.log('connected to the database');
 });
+
+app.use('/wiki', wikiRouter);
 
 const PORT = 3000;
 
@@ -17,8 +21,6 @@ const init = async () => {
   app.listen(PORT, () => {
     console.log(`App listening in port ${PORT}`);
   });
-
-}
-
+};
 
 init();
