@@ -6,7 +6,7 @@ module.exports = () =>
     <h3>Add a Page</h3>
     <hr />
     <form method="POST" action="/wiki/">
-      <div>PLACEHOLDER FOR AUTHOR NAME FIELD</div>
+      <div class="form-group">PLACEHOLDER FOR AUTHOR NAME FIELD</div>
 
       <div>PLACEHOLDER FOR AUTHOR EMAIL FIELD</div>
 

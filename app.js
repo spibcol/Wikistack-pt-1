@@ -10,7 +10,9 @@ db.authenticate().then(() => {
 });
 
 app.use('/wiki', wikiRouter);
-
+app.get('/', (req, res) => {
+  res.redirect('/wiki');
+});
 const PORT = 3000;
 
 const init = async () => {
