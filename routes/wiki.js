@@ -1,16 +1,18 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const addPage = require('../views/addPage');
+const addPage = require("../views/addPage");
+const bodyParser = require('body-parser')
 
-router.get('/', (req, res) => {
-  res.send('got to GET /wiki/');
+router.get("/", (req, res) => {
+  res.send("got to GET /wiki/");
 });
 
-router.post('/', (req, res) => {
-  res.send('got to POST /wiki/');
+router.post("/", (req, res) => {
+  res.send("got to POST /wiki/");
+  console.log(req.body);
 });
 
-router.get('/add', (req, res) => {
+router.get("/add", (req, res) => {
   res.send(addPage());
 });
 
